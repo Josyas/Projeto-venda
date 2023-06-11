@@ -6,11 +6,11 @@ using Venda_BackEnd.Repository.Interface;
 
 namespace Venda_BackEnd.Repository
 {
-    public class ClienteReposiotrio : IClienteReposiotrio
+    public class ClienteRepositorio : IClienteReposiotrio
     {
         private readonly ConexaoDB _conexaoDB;
 
-        public ClienteReposiotrio(ConexaoDB conexaoDB)
+        public ClienteRepositorio(ConexaoDB conexaoDB)
         {
             _conexaoDB = conexaoDB;
         }

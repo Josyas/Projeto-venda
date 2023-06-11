@@ -27,7 +27,7 @@ namespace Venda_BackEnd.Service
 
         public async Task EditarCliente(Cliente cliente)
         {
-            await _clienteReposiotrio.EditarCliente(cliente);
+           await _clienteReposiotrio.EditarCliente(cliente);
         }
 
         public async Task ApagarCliente(int cpf)

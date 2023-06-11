@@ -7,6 +7,7 @@ using Venda_BackEnd.Repository;
 using Venda_BackEnd.Repository.Interface;
 using Venda_BackEnd.Service;
 using Venda_BackEnd.Service.Interface;
+using Venda_BackEnd.Validadors;
 
 namespace Venda_BackEnd.DependenciesExtension
 {
@@ -19,15 +20,16 @@ namespace Venda_BackEnd.DependenciesExtension
 
         public static void AddServices(this IServiceCollection services)
         {
-            services.AddScoped<IClienteReposiotrio, ClienteReposiotrio>();
+            services.AddScoped<IClienteReposiotrio, ClienteRepositorio>();
             services.AddScoped<IClienteService, ClienteService>();
+            services.AddScoped<ICategoriaRepositorio, CategoriaRepositorio>();
+            services.AddScoped<ICategoriaService, CategoriaService>();
         }
 
         public static void AddValidation(this IServiceCollection services)
         {
-            //services.AddControllers().AddFluentValidation();
-            //services.AddTransient<IValidator<Cliente>, ClienteValidator>();
             services.AddControllers().AddFluentValidation(c => c.RegisterValidatorsFromAssemblyContaining<ClienteValidator>());
+            services.AddControllers().AddFluentValidation(c => c.RegisterValidatorsFromAssemblyContaining<CategoriaValidator>());
         }
     }
 }
