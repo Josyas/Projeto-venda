@@ -33,11 +33,11 @@ namespace Venda_BackEnd.Repository
 
             string query = "SELECT * FROM Cliente";
 
-            var lista = await db.QueryAsync<Cliente>(query);
+            var clientes = await db.QueryAsync<Cliente>(query);
 
             _conexaoDB.FecharConexao();
 
-            return lista.ToList();
+            return clientes.ToList();
         }
 
         public async Task EditarCliente(Cliente cliente)

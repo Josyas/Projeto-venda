@@ -35,18 +35,32 @@
                               Categoria
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="categoria.html">Nova Categoria</a></li>
-                                <li><a class="dropdown-item" href="lista-categoria.html">Lista Categoria</a></li>
+                              <li><a class="dropdown-item" href="categoria.html">Nova Categoria</a></li>
+                              <li><a class="dropdown-item" href="lista-categoria.html">Lista Categoria</a></li>
                             </ul>
                         </li>
                     </ul>
                 </div>
             </nav>
             <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 content imagem-center">
-                <img src="" alt="">
+                <div class="container scroll-container">
+                    <h1>Categorias</h1>
+                    <br/>
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>Nome</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody id="item-table-body">
+                      </tbody>
+                    </table>
+                </div>
             </main>
         </div>
     </div>
+    <script src="api/categoria-get.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -4,6 +4,9 @@ namespace Venda_BackEnd.Service.Interface
 {
     public interface ICategoriaService
     {
-        Task CadastrarCategoria(Categoria categoria);
+        Task AlterarCategoria(Categoria categoria);
+        Task ApagarCategoria(int idCategoria);
+        Task CadastrarCategoria(string nome);
+        Task<List<Categoria>> ListaCategoria();
     }
 }

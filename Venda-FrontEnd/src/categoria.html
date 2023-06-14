@@ -43,10 +43,25 @@
                 </div>
             </nav>
             <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 content imagem-center">
-                <img src="" alt="">
+                <div class="container">
+                    <h1>
+                      Categoria
+                    </h1>
+                      <br/>
+                      <form>
+                        <div class="form-group input">
+                          <label for="nomeInput">Nome</label>
+                          <input type="text" class="form-control" id="nome-input" required>
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-primary button">Salvar</button>
+                        </div>
+                      </form>
+                </div>
             </main>
         </div>
     </div>
+    <script src="api/categoria-post.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

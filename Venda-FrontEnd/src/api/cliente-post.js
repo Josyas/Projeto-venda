@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 headers: { 'Content-Type': 'application/json/' },
                 body: JSON.stringify(cliente)
             };
-            debugger
+  
             fetch('https://localhost:7180/cliente/novo-cliente', clienteRequest)
             .then(response => {
                 if(response.ok){

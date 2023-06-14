@@ -2,8 +2,9 @@
 {
     public class Categoria : ObjetoBase
     {
-        public Categoria(string nome) : base(nome)
-        { 
+        public Categoria(int idCategoria, string nome) : base(nome)
+        {
+            IdCategoria = idCategoria;
         }
 
         public int IdCategoria { get; private set; }
