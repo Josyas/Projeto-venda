@@ -7,7 +7,7 @@ namespace Venda_BackEnd.Controllers
 {
     [ApiController]
     [Route("cliente")]
-    public class ClienteController : Controller
+    public class ClienteController : ControllerBase
     {
         private readonly IClienteService _clienteService;
 

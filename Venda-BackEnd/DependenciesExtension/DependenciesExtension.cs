@@ -3,6 +3,7 @@ using FluentValidation.AspNetCore;
 using Venda_BackEnd.Data;
 using Venda_BackEnd.Entites;
 using Venda_BackEnd.FluentValidador;
+using Venda_BackEnd.Mappings;
 using Venda_BackEnd.Repository;
 using Venda_BackEnd.Repository.Interface;
 using Venda_BackEnd.Service;
@@ -24,12 +25,16 @@ namespace Venda_BackEnd.DependenciesExtension
             services.AddScoped<IClienteService, ClienteService>();
             services.AddScoped<ICategoriaRepositorio, CategoriaRepositorio>();
             services.AddScoped<ICategoriaService, CategoriaService>();
+            services.AddScoped<IProdutoRepositorio, ProdutoRepositorio>();
+            services.AddScoped<IProdutoService, ProdutoService>();
+            services.AddAutoMapper(typeof(EntitiesToDTOProfile));
         }
 
         public static void AddValidation(this IServiceCollection services)
         {
             services.AddControllers().AddFluentValidation(c => c.RegisterValidatorsFromAssemblyContaining<ClienteValidator>());
             services.AddControllers().AddFluentValidation(c => c.RegisterValidatorsFromAssemblyContaining<CategoriaValidator>());
+            services.AddControllers().AddFluentValidation(c => c.RegisterValidatorsFromAssemblyContaining<ProdutoValidator>());
         }
     }
 }
