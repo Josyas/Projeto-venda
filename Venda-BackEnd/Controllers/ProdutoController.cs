@@ -33,5 +33,44 @@ namespace Venda_BackEnd.Controllers
 
             return BadRequest();
         }
+
+        [HttpGet("lista-produto")]
+        public async Task<ActionResult<List<Produto>>> ListaProduto()
+        {
+            if (ModelState.IsValid)
+            {
+                var lista = await _produtoService.ListaProduto();
+
+                return Ok(lista);
+            }
+
+            return BadRequest();
+        }
+
+        [HttpPut("altera-produto")]
+        public async Task<ActionResult> EditarProduto(Produto produto)
+        {
+            if (ModelState.IsValid)
+            {
+                await _produtoService.EditarProduto(produto);
+
+                return Ok();
+            }
+
+            return BadRequest();
+        }
+
+        [HttpDelete("remover-produto")]
+        public async Task<ActionResult> ApagarProduto(BaseDTO codigo)
+        {
+            if (ModelState.IsValid)
+            {
+                await _produtoService.ApagarProduto(codigo.Codigo);
+
+                return Ok();
+            }
+
+            return BadRequest();
+        }
     }
 }

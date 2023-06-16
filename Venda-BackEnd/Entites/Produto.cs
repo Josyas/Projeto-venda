@@ -18,6 +18,6 @@
         public float Preco { get; private set; }
         public string Descricao { get; private set; }
         public int IdCategoria { get; private set; }
-        public Categoria Categoria { get; private set; }
+        public Categoria Categoria { get; set; }
     }
 }

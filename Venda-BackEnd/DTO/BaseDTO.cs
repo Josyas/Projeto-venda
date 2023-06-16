@@ -4,5 +4,6 @@
     {
         public int Cpf { get; set; }
         public int Id { get; set; }
+        public int Codigo { get; set; }
     }
 }
